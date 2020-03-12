@@ -2,21 +2,21 @@ package dc;
 
 public class Main {
     public static void main(String[] args) {
-        SamochódOsobowy osobowy1 = new SamochódOsobowy("Ford", "Focus", 2015, 6.2);
-        osobowy1.zatankujPaliwo(40);
-        SamochódDostawczy dostawczak1 = new SamochódDostawczy("Mercedes","Vito", 2017, 12.5, 2000);
-        dostawczak1.zatankujPaliwo(120);
+        Car car1 = new Car("Ford", "Focus", 2015, 6.2);
+        car1.fillUpOnFuel(40);
+        Truck truck1 = new Truck("Mercedes","Vito", 2017, 12.5, 2000);
+        truck1.fillUpOnFuel(120);
         try {
-            osobowy1.ruszajWTrasę(300);
-            osobowy1.zakończTrasę();
-            dostawczak1.ruszajWTrasę(230, 400);
-            dostawczak1.zakończTrasę();
-            dostawczak1.ruszajWTrasę(630, 400);
-            dostawczak1.zakończTrasę();
-            dostawczak1.ruszajWTrasę(730, 400);
-            dostawczak1.zakończTrasę();
+            car1.hitRoute(300);
+            car1.finishRoute();
+            truck1.hitRoute(230, 400);
+            truck1.finishRoute();
+            truck1.hitRoute(630, 400);
+            truck1.finishRoute();
+            truck1.hitRoute(730, 400);
+            truck1.finishRoute();
         }
-        catch(TrasaException ex) {
+        catch(RouteException ex) {
             System.out.println(ex.getMessage());
         }
     }
